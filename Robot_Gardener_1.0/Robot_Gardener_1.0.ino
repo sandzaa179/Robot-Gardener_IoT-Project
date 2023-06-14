@@ -5,7 +5,7 @@
 #include <SPI.h>
 #include <WiFiManager.h>
 #include "time.h"
-#include <FirebaseESP32.h>
+#include <Firebase_ESP_Client.h>
 
 #include <Addons/TokenHelper.h>
 #include <Addons/RTDBHelper.h>
