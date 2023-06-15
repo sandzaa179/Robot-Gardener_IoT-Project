@@ -8,21 +8,23 @@ This is the first IoT project born out of self-education. This project is called
 
 ## Equipment 
  <ul> 
-  <li>Node MCU ESP32 Devkit v1</li>
-   <img src="/Image/ESP32.png"  width="150" height="150">
-   <li>Base for Node MCU ESP32</li>
-   <img src="/Image/base.png"  width="150" height="150">
-   <li>Soil Moisture Sensor [ connect to PIN G14 ]</li>
-   <img src="/Image/soil moisture sensor.png"  width="150" height="150">
-   <li>LDR Light Sensor -  [ connect to PIN G12 ]</li> 
-   <img src="/Image/LDR Sensor.png"  width="150" height="150">
-   <li>Relay 5v(Pump)[ connect to PIN TXD ]</li>
-   <img src="/Image/Relay 5V.png"  width="150" height="150"> <img src="/Image/Pump.png"  width="150" height="150">
-   <li>Relay 5v(Led)[ connect to PIN RXD ]</li>
-   <img src="/Image/Relay 5V.png" width="150" height="150"> <img src="/Image/LED.jpg"  width="150" height="150">
-   <li>Jumper cable</li>
-   <img src="/Image/cable.jpg"  width="150" height="150">
-   <li>waterproof box</li>
-   <img src="/Image/BOX.jpg"  width="150" height="150">
+    <li>Node MCU ESP32 Devkit v1</li> 
+    <li>Base for Node MCU ESP32</li>
+    <li>Soil Moisture Sensor [ connect to PIN G14 ]</li>
+    <li>LDR Light Sensor -  [ connect to PIN G12 ]</li>
+    <li>Relay 5V(Pump)[ connect to PIN TXD ]</li>
+    <li>Relay 5V(LED)[ connect to PIN RXD ]</li>
+    <li>Jumper cable</li>
+    <li>waterproof box</li>
+    <br><br>
+   <img src="/Image/ESP32.png"  width="150" height="150" title="Node MCU ESP32 Devkit v1"> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 
+    <img src="/Image/base.png"  width="150" height="150" title="Base for Node MCU ESP32"> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 
+   <img src="/Image/soil moisture sensor.png"  width="150" height="150" title="Soil Moisture Sensor"> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;<br><br>
+    <img src="/Image/LDR Sensor.png"  width="150" height="150" title="LDR Light Sensor ">&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 
+   <img src="/Image/Relay 5V.png"  width="150" height="150" title="Relay 5V"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    <img src="/Image/Pump.png"  width="150" height="150" title="Pump"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br><br>
+    <img src="/Image/LED.jpg"  width="150" height="150" title="LED">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+   <img src="/Image/cable.jpg"  width="150" height="150" title="Jumper cable">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+   <img src="/Image/BOX.jpg"  width="150" height="150" title="waterproof box">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
  </ul>
 
