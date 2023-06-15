@@ -19,10 +19,10 @@ This is the first IoT project born out of self-education. This project is called
    <li>Relay 5v(Pump)[ connect to PIN TXD ]</li>
    <img src="/Image/Relay 5V.png"  width="150" height="150"> <img src="/Image/Pump.png"  width="150" height="150">
    <li>Relay 5v(Led)[ connect to PIN RXD ]</li>
-   <img src="/Image/Relay 5V.png" width="150" height="150"> <img src="/Image/LED.png"  width="150" height="150">
+   <img src="/Image/Relay 5V.png" width="150" height="150"> <img src="/Image/LED.jpg"  width="150" height="150">
    <li>Jumper cable</li>
-   <img src="/Image/cable.png"  width="150" height="150">
+   <img src="/Image/cable.jpg"  width="150" height="150">
    <li>waterproof box</li>
-   <img src="/Image/BOX.png"  width="150" height="150">
+   <img src="/Image/BOX.jpg"  width="150" height="150">
  </ul>
 
