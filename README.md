@@ -4,16 +4,23 @@ This is the first IoT project born out of self-education. This project is called
    The Robot Gardener is built to be innovative for the environment. and created to study IoT the details of the following. 
 
 ## Detail
-  
+  Use soil moisture sensor and LDR light sensor to collect data and send it to firebase Firebase real-time database. The obtained value will map the min value to the max value at 0 and 100 to set the value as a percentage.
+### Connection
+<li>Soil Moisture Sensor (3.3V)[Connect to Pin G34]</li>
+<li>LDR Light Sensor (3.3V)[Connect to Pin G35] </li>
+<li>Relay for Pump (5V)[Connect to Pin G23]</li>
+<li>Relay for LED (5V)[Connect to Pin G22]</li>
 
+### Setting
+send information to a deadline What time does it start? and stop at what time and set the percentage that is lower to turn on pump or LED (developing a blyke to show and send data) now used as a setting value in Firebase.
 ## Equipment 
  <ul> 
     <li>Node MCU ESP32 Devkit v1</li> 
     <li>Base for Node MCU ESP32</li>
-    <li>Soil Moisture Sensor [ connect to PIN G14 ]</li>
-    <li>LDR Light Sensor -  [ connect to PIN G12 ]</li>
-    <li>Relay 5V(Pump)[ connect to PIN TXD ]</li>
-    <li>Relay 5V(LED)[ connect to PIN RXD ]</li>
+    <li>Soil Moisture Sensor</li>
+    <li>LDR Light Sensor</li>
+    <li>Relay 5V for Pump</li>
+    <li>Relay 5V for LED</li>
     <li>Jumper cable</li>
     <li>waterproof box</li>
     <br><br>
@@ -26,5 +33,8 @@ This is the first IoT project born out of self-education. This project is called
     <img src="/Image/LED.jpg"  width="150" height="150" title="LED">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
    <img src="/Image/cable.jpg"  width="150" height="150" title="Jumper cable">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
    <img src="/Image/BOX.jpg"  width="150" height="150" title="waterproof box">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
- </ul>
+<ul>
+   
+   ## Image
+   <img src="/Image/Picture 1.jpg">
 
