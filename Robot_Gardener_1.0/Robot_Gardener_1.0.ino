@@ -5,7 +5,7 @@
 #include <SPI.h>
 #include <WiFiManager.h>
 #include "time.h"
-#include <Firebase_ESP_Client.h>
+#include <FirebaseESP32.h>
 
 #include <Addons/TokenHelper.h>
 #include <Addons/RTDBHelper.h>
@@ -13,6 +13,8 @@
 #define ESP_AP_NAME "boken 8266"
 
 // For the following credentials, see examples/Authentications/SignInAsUser/EmailPassword/EmailPassword.ino
+#define API_KEY "AIzaSyCBjJQ2KV_NkA0WbTaQbVMTN_5pSrrtuRk"
+
 #define TOKEN "P1lqN7qC8xCIzSPcPxkaQHpbghBsaQe0JP3V60UQ"
 
 /* 3. Define the RTDB URL */
@@ -28,24 +30,23 @@ unsigned long sendDataPrevMillis = 0;
 
 unsigned long count = 0;
 
-int pump = 1;
-int led = 3;
+int pump = 19;
+int led = 18;
 
 bool pumpOn = true;
-bool pumpOff = false;
 
 bool ledOn = true;
-bool ledOff = false;
 
-const char* ntpServer = "th.pool.ntp.org";
+const char* ntpServer = "asia.pool.ntp.org";
 const long  gmtOffset_sec = 25200;
-const int   daylightOffset_sec = 25200;
+const int   daylightOffset_sec = 0
+;
 
 void setup() {
   Serial.begin(9600);
 
-  WiFiManager wifiManager;
-  wifiManager.autoConnect(ESP_AP_NAME);
+  WiFiManager wifimanager;
+  wifimanager.autoConnect(ESP_AP_NAME);
   while (WiFi.status() != WL_CONNECTED) {
     delay(250);
     Serial.print(".");
@@ -59,8 +60,8 @@ void setup() {
 
   /* Assign the RTDB URL (required) */
   config.database_url = DATABASE_URL;
-
-  config.api_key = TOKEN;
+  config.api_key = API_KEY;
+  config.signer.tokens.legacy_token = TOKEN;
 
   Firebase.begin(&config, &auth);
 
@@ -87,12 +88,14 @@ void setup() {
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
 }
 
-void loop() {
-  int currentmoisture = map(analogRead(14), 4095, 400, 0, 100);
+void loop()
+{
+  int currentmoisture = map(analogRead(34),4095, 500, 0, 100);
+  int currentlight = map(analogRead(35),500, 4095, 0, 100);
   Serial.println(currentmoisture);
-  int currentlight = map(analogRead(12), 250, 1023, 0, 100);
   Serial.println(currentlight);
-  delay(500);
+
+  delay(1000);
   if (Firebase.ready() && (millis() - sendDataPrevMillis > 15000 || sendDataPrevMillis == 0)) {
 
     sendDataPrevMillis = millis();
@@ -107,14 +110,11 @@ void loop() {
     int stoplh = (Firebase.RTDB.getInt(&fbdo, "/value/time/led/stop/hour"),int(fbdo.intData()));
     int stoplm = (Firebase.RTDB.getInt(&fbdo, "/value/time/led/stop/minute"), int(fbdo.intData()));
 
-    Serial.println(startmh);
-    Serial.println(startmm);
+    int pumpStartTime = (startmh * 60) + startmm;
+    int pumpStopTime = (stopmh * 60) + stopmm;
 
-    int pumpStartTime = startmh * 60 + startmm;
-    int pumpStopTime = stopmh * 60 + stopmm;
-
-    int ledStartTime = startlh * 60 + startlm;
-    int ledStopTime = stoplh * 60 + stoplm;
+    int ledStartTime = (startlh * 60) + startlm;
+    int ledStopTime = (stoplh * 60) + stoplm;
 
     int setmoisture = (Firebase.RTDB.getInt(&fbdo, "/value/data/moisture/setmoisture"),int(fbdo.intData()));
     int setlight = (Firebase.RTDB.getInt(&fbdo, "/value/data/light/setlight"),int(fbdo.intData()));
@@ -142,7 +142,7 @@ void loop() {
     }
 
     //led On/Off when currentlight > setlight
-    if (currentlight > setlight && currentMinutes >= ledStartTime && currentMinutes < ledStopTime) {
+    if (currentlight < setlight && currentMinutes >= ledStartTime && currentMinutes < ledStopTime) {
       Firebase.RTDB.setBool(&fbdo, "/value/Led/LedOn", true);
       ledOn = true;
       delay(200);
@@ -154,19 +154,19 @@ void loop() {
 
     //Pump On when Pump/PumpOn is True
     if (pumpOn == true) {
-      digitalWrite(pump, HIGH);
+      digitalWrite(pump, LOW);
       delay(100);
     } else {
-      digitalWrite(pump, LOW);
+      digitalWrite(pump, HIGH);
       delay(100);
     }
 
     //led On when Led/LedOn is True
     if (ledOn == true) {
-      digitalWrite(led, HIGH);
+      digitalWrite(led, LOW);
       delay(100);
     } else {
-      digitalWrite(led, LOW);
+      digitalWrite(led, HIGH);
       delay(100);
     }
   }
