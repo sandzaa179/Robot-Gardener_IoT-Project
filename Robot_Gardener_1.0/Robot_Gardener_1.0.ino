@@ -10,12 +10,12 @@
 #include <Addons/TokenHelper.h>
 #include <Addons/RTDBHelper.h>
 
-#define ESP_AP_NAME "boken 8266"
+#define ESP_AP_NAME "**********"
 
 // For the following credentials, see examples/Authentications/SignInAsUser/EmailPassword/EmailPassword.ino
-#define API_KEY "AIzaSyCBjJQ2KV_NkA0WbTaQbVMTN_5pSrrtuRk"
+#define API_KEY "*****************************"
 
-#define TOKEN "P1lqN7qC8xCIzSPcPxkaQHpbghBsaQe0JP3V60UQ"
+#define TOKEN "*****************************"
 
 /* 3. Define the RTDB URL */
 #define DATABASE_URL "https://robotgardener-qfuu-default-rtdb.asia-southeast1.firebasedatabase.app/"
